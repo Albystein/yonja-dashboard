@@ -1,15 +1,16 @@
 import React from 'react'
 
-import {Button} from "antd"
+import { Router } from "@reach/router";
+import Landing from "../components/Landing";
+import Dashboard from "../components/Dashboard"
 
-import "./App.less"
+import "./antd.less"
 
 const Home = () => (
-  <div>
-    <Button type="primary" style={{ marginLeft: 8 }}>
-      Primary Button
-    </Button>
-  </div>
+  <Router>
+    <Landing path="/" />
+    <Dashboard path="/dashboard/*" />
+  </Router>
 )
 
 export default Home
