@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Link } from "@reach/router"
 import { Form, Icon, Input, Button, Checkbox , Row, Col, Typography} from 'antd';
 import { CustomButton as YonjaButton } from "./CustomButton"
 
@@ -60,9 +61,11 @@ class LoginForm extends React.Component {
         </Form.Item>
         <Form.Item>
           <Row>
-            <Col style={{display:"flex", justifyContent:"center"}}>
+            <Col style={{display:"flex", justifyContent:"center", marginBottom:24}}>
               <YonjaButton type="submit">
-                Log in
+                <Link to="dashboard">
+                  <Text style={{color:"white", fontWeight:100, fontFamily: "inherit"}}>Sign In</Text>
+                </Link>
               </YonjaButton>
             </Col>
             <Col style={{display:"flex", justifyContent:"center"}}>

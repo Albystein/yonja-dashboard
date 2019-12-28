@@ -23,9 +23,9 @@ const Landing = (props) =>{
             <div className="content">
                 <Row>
                 <Col span={14}>
-                            <img src={illustration} className="illustration"/>
-                        </Col>
-                        <Col span={10} style={{paddingRight:64}}>
+                    <img src={illustration} className="illustration"/>
+                </Col>
+                        <Col span={8} style={{paddingRight:64}}>
                             <Title style={{marginBottom: 0}}>Welcome,</Title>
                             <Text type="secondary">Please sign into your account.</Text>
                             <p></p>
