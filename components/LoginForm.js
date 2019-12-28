@@ -1,7 +1,11 @@
 import React from 'react'
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
-class NormalLoginForm extends React.Component {
+import { Form, Icon, Input, Button, Checkbox , Row, Col, Typography} from 'antd';
+import { CustomButton as YonjaButton } from "./CustomButton"
+
+const { Text , Paragraph} = Typography
+
+class LoginForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -22,6 +26,7 @@ class NormalLoginForm extends React.Component {
             <Input
               prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
               placeholder="Username"
+              size="large"
             />,
           )}
         </Form.Item>
@@ -32,26 +37,42 @@ class NormalLoginForm extends React.Component {
             <Input
               prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
               type="password"
+              size="large"
               placeholder="Password"
             />,
           )}
         </Form.Item>
         <Form.Item>
-          {getFieldDecorator('remember', {
-            valuePropName: 'checked',
-            initialValue: true,
-          })(<Checkbox>Remember me</Checkbox>)}
-          <a className="login-form-forgot" href="">
-            Forgot password
-          </a>
-          <Button type="primary" htmlType="submit" className="login-form-button">
-            Log in
-          </Button>
-          Or <a href="">register now!</a>
+          <Row>
+            <Col span={12}>
+              {getFieldDecorator('remember', {
+              valuePropName: 'checked',
+              initialValue: true,
+            })(
+            <Checkbox>Remember me</Checkbox>)}  
+            </Col>
+            <Col span={12}>
+              <a className="login-form-forgot" href="">
+                Forgot password?
+              </a>
+            </Col>
+          </Row>
+        </Form.Item>
+        <Form.Item>
+          <Row>
+            <Col style={{display:"flex", justifyContent:"center"}}>
+              <YonjaButton type="submit">
+                Log in
+              </YonjaButton>
+            </Col>
+            <Col style={{display:"flex", justifyContent:"center"}}>
+              <Paragraph type="secondary">I don’t have an account, <Text strong><a>Register</a></Text> </Paragraph>
+            </Col>
+          </Row>
         </Form.Item>
       </Form>
     );
   }
 }
 
-export default Form.create({ name: 'normal_login' })(NormalLoginForm);
+export default Form.create({ name: 'normal_login' })(LoginForm);
