@@ -30,3 +30,55 @@
     position:relative;
     top:1px;
 }
+
+.ant-layout-sider-children {
+    position: relative;
+}
+.sidebar-image {
+    z-index: -10;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right:0;
+    left:0;
+}
+
+.logo {
+    height: 64px;
+    width: auto;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 120px;
+    padding-top: 52px;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.search-input {
+    border:0px;
+    width: inherit;
+}
+
+.header {
+    background: #ffffff !important;
+    height: auto !important;
+
+}
+
+.search-input:active{
+    border: 0px;
+}
