@@ -9,7 +9,8 @@ import {
   Avatar,
   Dropdown,
   Typography,
-  Card
+  Card,
+  Badge
 } from "antd";
 import { Router, Link } from "@reach/router";
 
@@ -81,32 +82,39 @@ class Dashboard extends Component {
             >
               <Menu.Item key="home">
                 <Link to="">
-                  <Icon type="layout" />
+                  <Icon type="dashboard" />
                   <span>Home</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="schedules">
                 <Link to="schedules">
-                  <Icon type="layout" />
+                  <Icon type="history" />
                   <span>Schedules</span>
+                  <Badge
+                    count={25}
+                    style={{
+                      borderWidth: 0,
+                      marginLeft: 16
+                    }}
+                  />
                 </Link>
               </Menu.Item>
               <Menu.Item key="agents">
                 <Link to="agents">
-                  <Icon type="layout" />
+                  <Icon type="team" />
                   <span>Agents</span>
                 </Link>
               </Menu.Item>
               <div style={{ height: 280 }}></div>
               <Menu.Item key="settings">
                 <Link to="settings">
-                  <Icon type="layout" />
+                  <Icon type="setting" />
                   <span>Settings</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="help">
                 <Link to="help">
-                  <Icon type="layout" />
+                  <Icon type="question-circle" />
                   <span>Help</span>
                 </Link>
               </Menu.Item>
@@ -115,8 +123,8 @@ class Dashboard extends Component {
         </Sider>
         <Layout>
           <Header className="header">
-            <Row>
-              <Col span={18}>
+            <Row type="flex" align="middle">
+              <Col span={19}>
                 <Row type="flex" align="middle">
                   <Col
                     span={2}
@@ -135,18 +143,17 @@ class Dashboard extends Component {
                   </Col>
                 </Row>
               </Col>
-              <Col span={6} style={{ display: "flex", flexGrow: "inherit" }}>
-                <Row type="flex" align="middle">
+              <Col span={5} style={{ display: "flex", flexGrow: "inherit" }}>
+                <Row type="flex" align="middle" gutter={8}>
                   <Col
                     span={4}
                     style={{ display: "flex", alignItems: "center" }}
                   >
-                    <Icon type="bell" style={{ fontSize: 24 }} />
+                    <Badge count={5}>
+                      <Icon type="bell" style={{ fontSize: 24 }} />
+                    </Badge>
                   </Col>
-                  <Col
-                    span={20}
-                    style={{ display: "flex", alignItems: "center" }}
-                  >
+                  <Col span={20}>
                     <Dropdown overlay={menu}>
                       <Card
                         bodyStyle={{
@@ -174,7 +181,7 @@ class Dashboard extends Component {
               </Col>
             </Row>
           </Header>
-          <Content>
+          <Content style={{ backgroundColor: "#fffaf1" }}>
             <Router>
               <Home path="/" />
               <Schedules path="/schedules" />

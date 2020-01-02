@@ -12,11 +12,13 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-less": "^1.0.1",
     "antd": "^3.26.4",
+    "google-map-react": "^1.1.5",
     "less": "^3.10.3",
     "next": "9.1.6",
     "next-images": "^1.2.0",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "recharts": "^2.0.0-beta.1"
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.17.0"

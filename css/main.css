@@ -53,7 +53,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 120px;
-  padding-top: 52px;
+  padding-top: 22px;
 }
 
 .sidebar-footer {
@@ -71,13 +71,15 @@
 .search-input {
   border: 0px;
   width: inherit;
+  font-size: medium;
 }
 
 .header {
   background: #ffffff !important;
   height: auto !important;
+  padding: 0 24px !important;
 }
 
-.search-input:active {
-  border: 0px;
+.search-input:focus {
+  outline: none;
 }
